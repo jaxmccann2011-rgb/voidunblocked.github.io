@@ -1,0 +1,934 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VOID — Unblocked Games</title>
+<style>
+  :root{--bg-0:#0a0512;--panel:rgba(40,20,55,.55);--text:#fff7ea;--muted:#b8a3c9;--muted-2:#7a6a8a;--pumpkin:#ff7518;--pumpkin-2:#ffa347;--purple-hi:#c77dff;--border:rgba(255,117,24,.14);--ease:cubic-bezier(.22,1,.36,1)}
+  *{box-sizing:border-box}
+  html,body{margin:0;min-height:100%}
+  body{color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg-0);cursor:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%3E%3Cellipse%20cx='22'%20cy='26'%20rx='16'%20ry='14'%20fill='%23ff7518'%20stroke='%231a0a00'%20stroke-width='2.5'/%3E%3Cpath%20d='M22%2012%20Q20%206%2022%204%20Q25%206%2024%2012%20Z'%20fill='%234a8b3a'%20stroke='%231a0a00'%20stroke-width='1.5'/%3E%3Cpath%20d='M16%2022%20L19%2027%20L13%2027%20Z'%20fill='%23ffcc33'/%3E%3Cpath%20d='M28%2022%20L31%2027%20L25%2027%20Z'%20fill='%23ffcc33'/%3E%3Cpath%20d='M15%2032%20L18%2030%20L21%2032%20L24%2030%20L27%2032%20L29%2030%20L28%2035%20Q22%2037.5%2016%2035%20Z'%20fill='%23ffcc33'/%3E%3C/svg%3E") 22 26,auto;-webkit-font-smoothing:antialiased}
+  body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 88% 14%,#ffe0b2 0%,#ffb870 2.5%,rgba(255,150,60,.45) 8%,rgba(255,117,24,.1) 20%,transparent 34%),radial-gradient(1000px 800px at 50% -20%,rgba(255,117,24,.22),transparent 60%),radial-gradient(900px 700px at 12% 100%,rgba(155,92,255,.2),transparent 60%),radial-gradient(800px 600px at 85% 95%,rgba(217,38,38,.14),transparent 65%),linear-gradient(180deg,#0a0512 0%,#130a1d 45%,#06030d 100%)}
+  body::after{content:"";position:fixed;inset:0;z-index:-1;background-image:radial-gradient(1px 1px at 12% 18%,rgba(255,247,234,.7) 50%,transparent 51%),radial-gradient(1.5px 1.5px at 22% 8%,rgba(255,247,234,.85) 50%,transparent 51%),radial-gradient(1px 1px at 35% 22%,rgba(255,247,234,.5) 50%,transparent 51%),radial-gradient(1.5px 1.5px at 48% 5%,rgba(255,247,234,.7) 50%,transparent 51%),radial-gradient(1px 1px at 62% 28%,rgba(255,247,234,.55) 50%,transparent 51%),radial-gradient(1px 1px at 8% 42%,rgba(255,247,234,.4) 50%,transparent 51%),radial-gradient(1.5px 1.5px at 78% 35%,rgba(255,247,234,.5) 50%,transparent 51%),radial-gradient(1px 1px at 5% 68%,rgba(255,247,234,.35) 50%,transparent 51%),radial-gradient(1px 1px at 92% 55%,rgba(255,247,234,.4) 50%,transparent 51%);pointer-events:none}
+  a,button{cursor:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%3E%3Cellipse%20cx='22'%20cy='26'%20rx='16'%20ry='14'%20fill='%23ffa347'%20stroke='%231a0a00'%20stroke-width='2.5'/%3E%3Cpath%20d='M22%2012%20Q20%206%2022%204%20Q25%206%2024%2012%20Z'%20fill='%237bed9f'%20stroke='%231a0a00'%20stroke-width='1.5'/%3E%3Cpath%20d='M16%2022%20L19%2027%20L13%2027%20Z'%20fill='%23fff59d'/%3E%3Cpath%20d='M28%2022%20L31%2027%20L25%2027%20Z'%20fill='%23fff59d'/%3E%3Cpath%20d='M15%2032%20L18%2030%20L21%2032%20L24%2030%20L27%2032%20L29%2030%20L28%2035%20Q22%2037.5%2016%2035%20Z'%20fill='%23fff59d'/%3E%3C/svg%3E") 22 26,pointer}
+  .wrap{width:min(1120px,calc(100% - 36px));margin:auto}
+  header{display:flex;align-items:center;justify-content:space-between;padding:28px 0 22px}
+  .brand{display:flex;align-items:center;gap:14px;font-weight:800;letter-spacing:-.03em;font-size:18px}
+  .logo{position:relative;width:40px;height:40px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(145deg,#ffa347 0%,#ff7518 55%,#c9570f 100%);color:#1a0a00;font-weight:950;font-size:18px;box-shadow:0 10px 30px rgba(255,117,24,.35),0 0 0 1px rgba(255,200,130,.25) inset,0 0 40px rgba(255,117,24,.15)}
+  .logo::before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%) rotate(-12deg);width:10px;height:13px;background:linear-gradient(180deg,#7bed9f,#4a8b3a);border:1.5px solid #1a0a00;border-radius:5px 5px 2px 2px;z-index:2}
+  nav{display:flex;gap:4px}
+  nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;padding:8px 14px;border-radius:10px;transition:color .2s var(--ease),background .2s var(--ease)}
+  nav a:hover{color:var(--pumpkin-2);background:rgba(255,117,24,.08)}
+  .hero{padding:64px 0 40px;max-width:780px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--pumpkin-2);text-transform:uppercase;letter-spacing:.22em;font-size:11px;font-weight:800;padding:7px 14px;border-radius:999px;background:rgba(255,117,24,.1);border:1px solid rgba(255,117,24,.28);box-shadow:0 0 24px rgba(255,117,24,.1)}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--pumpkin);box-shadow:0 0 12px var(--pumpkin);animation:flicker 2.6s ease-in-out infinite}
+  @keyframes flicker{0%,100%{opacity:1}45%{opacity:.75}55%{opacity:1}}
+  h1{font-size:clamp(46px,8.5vw,88px);line-height:.94;letter-spacing:-.06em;margin:20px 0 20px;font-weight:850;background:linear-gradient(160deg,#fff7ea 0%,#ffc98b 45%,#ff7518 78%,#c77dff 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 60px rgba(255,117,24,.2)}
+  .hero p{color:var(--muted);font-size:17px;line-height:1.65;max-width:580px}
+  .search{margin:32px 0 8px;display:flex;align-items:center;gap:14px;padding:15px 20px;background:linear-gradient(180deg,rgba(40,20,55,.7),rgba(20,10,30,.75));border:1px solid var(--border);border-radius:16px;backdrop-filter:blur(20px);box-shadow:0 20px 60px rgba(0,0,0,.4),0 0 0 1px rgba(255,117,24,.04) inset;max-width:560px;transition:border-color .25s var(--ease),box-shadow .25s var(--ease),transform .25s var(--ease)}
+  .search:focus-within{border-color:rgba(255,117,24,.5);box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 40px rgba(255,117,24,.15);transform:translateY(-1px)}
+  .search span{color:var(--pumpkin-2);font-size:18px}
+  .search input{width:100%;border:0;outline:0;color:var(--text);background:transparent;font-size:15px;font-family:inherit}
+  .search input::placeholder{color:var(--muted-2)}
+  .section-heading{padding:12px 0 24px;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+  .section-heading h2{position:relative;font-size:clamp(22px,3vw,30px);letter-spacing:-.03em;margin:0;font-weight:800;padding-bottom:10px;background:linear-gradient(90deg,#fff7ea,#ffb870);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .section-heading h2::after{content:"";position:absolute;left:0;bottom:0;width:64px;height:3px;background:linear-gradient(90deg,var(--pumpkin),transparent);border-radius:2px;box-shadow:0 0 12px rgba(255,117,24,.5)}
+  .section-heading p{margin:0;color:var(--muted);font-size:14px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:0 0 60px}
+  .grid.games{padding-bottom:44px}
+  .grid.apps{grid-template-columns:repeat(4,1fr)}
+  .card{position:relative;overflow:hidden;min-height:210px;padding:18px;border-radius:22px;background:linear-gradient(160deg,rgba(45,22,60,.68) 0%,rgba(15,8,25,.85) 100%);border:1px solid var(--border);backdrop-filter:blur(16px);transition:transform .3s var(--ease),border-color .3s var(--ease),box-shadow .3s var(--ease)}
+  .card:hover{transform:translateY(-6px);border-color:rgba(255,117,24,.45);box-shadow:0 24px 60px rgba(0,0,0,.55),0 0 40px rgba(255,117,24,.12)}
+  .card.app-card{min-height:190px}
+  .thumb{position:relative;height:128px;border-radius:16px;margin-bottom:16px;overflow:hidden;background:linear-gradient(135deg,#2a1224,#3a1820);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 1px rgba(255,117,24,.08) inset}
+  .thumb img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .55s var(--ease),filter .35s var(--ease)}
+  .thumb::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 50%,rgba(10,5,18,.75) 100%);pointer-events:none}
+  .card:hover .thumb img{transform:scale(1.08);filter:saturate(1.1) brightness(1.05)}
+  .thumb span{position:relative;z-index:2;color:#fff;font-weight:900;font-size:clamp(13px,2.1vw,17px);letter-spacing:.14em;padding:6px 11px;border-radius:9px;background:rgba(10,5,18,.72);border:1px solid rgba(255,117,24,.25);backdrop-filter:blur(8px);text-shadow:0 2px 10px rgba(0,0,0,.85)}
+  .youtube-thumb{position:relative;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#2a060b 0%,#4a0f12 50%,#1a0507 100%)}
+  .youtube-thumb::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 55%,rgba(255,20,20,.5),transparent 62%);pointer-events:none}
+  .youtube-thumb span{position:relative;z-index:2;display:inline-flex;align-items:center;gap:10px;color:#fff;font-weight:950;font-size:clamp(15px,2.4vw,20px);letter-spacing:.12em;text-shadow:0 3px 14px rgba(0,0,0,.9);background:rgba(0,0,0,.65);padding:8px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.12)}
+  .youtube-thumb span::before{content:"▶";display:grid;place-items:center;width:26px;height:18px;background:#ff0033;border-radius:5px;font-size:9px;color:#fff;letter-spacing:0;box-shadow:0 4px 14px rgba(255,0,51,.5)}
+  .soundcloud-thumb{position:relative;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#3a1800 0%,#6b2a00 50%,#2a1000 100%)}
+  .soundcloud-thumb::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,rgba(255,117,24,.5),transparent 45%),radial-gradient(circle at 72% 62%,rgba(255,150,60,.35),transparent 50%);pointer-events:none}
+  .soundcloud-thumb span{position:relative;z-index:2;display:inline-flex;align-items:center;gap:10px;color:#fff;font-weight:950;font-size:clamp(13px,2.2vw,18px);letter-spacing:.12em;text-shadow:0 3px 14px rgba(0,0,0,.9);background:rgba(20,8,0,.7);padding:8px 14px;border-radius:10px;border:1px solid rgba(255,117,24,.4)}
+  .soundcloud-thumb span::before{content:"☁";display:grid;place-items:center;width:24px;height:20px;background:linear-gradient(180deg,#ffa347,#ff7518);border-radius:6px;font-size:12px;color:#2a1000;letter-spacing:0;box-shadow:0 4px 14px rgba(255,117,24,.5)}
+  .card h2{font-size:17px;margin:0 0 5px;letter-spacing:-.01em}
+  .card p{margin:0 0 16px;color:var(--muted);font-size:13px;line-height:1.5}
+  .play{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:11px;color:#fff;text-decoration:none;font-size:13px;font-weight:700;background:linear-gradient(180deg,rgba(255,117,24,.18),rgba(255,117,24,.07));border:1px solid rgba(255,117,24,.3);transition:background .25s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease),transform .25s var(--ease)}
+  .play:hover{background:linear-gradient(180deg,rgba(255,117,24,.35),rgba(255,117,24,.18));border-color:rgba(255,117,24,.65);box-shadow:0 8px 24px rgba(255,117,24,.25);transform:translateY(-1px)}
+  .no-results{display:none;padding:40px 20px;text-align:center;color:var(--muted);font-size:16px;grid-column:1/-1}
+  .no-results strong{display:block;color:var(--pumpkin-2);font-size:22px;margin-bottom:8px;font-weight:800;letter-spacing:-.02em}
+  .hidden-by-search{display:none!important}
+  .game-modal{position:fixed;inset:0;z-index:50;background:rgba(4,2,8,.95);backdrop-filter:blur(14px);padding:clamp(8px,2vw,24px);animation:modalIn .3s var(--ease)}
+  .game-modal[hidden]{display:none}
+  @keyframes modalIn{from{opacity:0}to{opacity:1}}
+  .fnaf-shell{width:100%;height:100%;max-width:1500px;margin:auto;display:flex;flex-direction:column;border:1px solid rgba(255,117,24,.2);border-radius:16px;background:linear-gradient(160deg,#150a1e,#06030d);color:var(--text);overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.75),0 0 80px rgba(255,117,24,.06),inset 0 0 80px rgba(155,92,255,.04)}
+  .fnaf-top{display:flex;flex-shrink:0;justify-content:space-between;align-items:center;padding:12px 16px;background:linear-gradient(180deg,rgba(30,15,45,.95),rgba(15,8,25,.95));border-bottom:1px solid var(--border);gap:12px;flex-wrap:wrap}
+  .fnaf-top strong{letter-spacing:.14em;font-size:12px;color:var(--muted);font-weight:700}
+  .fnaf-top button,.fnaf-top a.topbtn{border:1px solid rgba(255,117,24,.28);color:#fff;background:rgba(255,117,24,.08);padding:9px 13px;border-radius:9px;cursor:pointer;text-decoration:none;font-size:13px;font-family:inherit;font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:background .2s var(--ease),border-color .2s var(--ease)}
+  .fnaf-top button:hover,.fnaf-top a.topbtn:hover{background:rgba(255,117,24,.22);border-color:rgba(255,117,24,.55)}
+  .fnaf-frame{display:block;flex:1;width:100%;min-height:0;border:0;background:#000}
+  @media(max-width:560px){.game-modal{padding:0}.fnaf-shell{border-radius:0}.fnaf-top{padding:10px}}
+  footer{padding:0 0 40px;color:var(--muted-2);font-size:12px;text-align:center;letter-spacing:.06em}
+  @media (max-width:900px){.grid.apps{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.grid.apps{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.wrap{width:min(100% - 24px,1120px)}.grid{grid-template-columns:1fr}.grid.apps{grid-template-columns:1fr}nav{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><div class="logo">V</div><span>VOID</span></div>
+    <nav><a href="#games-section">Games</a><a href="#apps-section">Apps</a><a href="#about">About</a></nav>
+  </header>
+
+  <main>
+    <section class="hero" id="about">
+      <div class="eyebrow">No installs · instant play</div>
+      <h1>Play. Chill.<br>Disappear.</h1>
+      <p>A clean, fast hub for your favorite browser games and web apps. Pick something, hit play, and get straight into it.</p>
+      <label class="search" for="search">
+        <span>⌕</span>
+        <input id="search" type="search" placeholder="Search games & apps..." aria-label="Search games and apps" autocomplete="off">
+      </label>
+    </section>
+
+    <div class="section-heading" id="games-section"><h2>Games</h2><p>Instant-play browser games</p></div>
+
+    <section class="grid games" id="games">
+      <article class="card" data-name="FNAF">
+        <div class="thumb" role="img" aria-label="Five Nights at Freddy's"><img src="https://cdn.akamai.steamstatic.com/steam/apps/319510/header.jpg" alt="" onerror="this.remove()"><span>FNAF</span></div>
+        <h2>FNAF</h2><p>Survive the night at Freddy Fazbear's Pizza.</p>
+        <a class="play" href="#play-fnaf" id="launchFnaf">Play game ▶</a>
+      </article>
+      <article class="card" data-name="FNAF 2">
+        <div class="thumb" role="img" aria-label="Five Nights at Freddy's 2"><img src="https://cdn.akamai.steamstatic.com/steam/apps/332800/header.jpg" alt="" onerror="this.remove()"><span>FNAF 2</span></div>
+        <h2>FNAF 2</h2><p>Return to Freddy Fazbear's Pizza for a terrifying new shift.</p>
+        <a class="play" href="#play-fnaf2" id="launchFnaf2">Play game ▶</a>
+      </article>
+      <article class="card" data-name="FNAF 3">
+        <div class="thumb" role="img" aria-label="Five Nights at Freddy's 3"><img src="https://cdn.akamai.steamstatic.com/steam/apps/354140/header.jpg" alt="" onerror="this.remove()"><span>FNAF 3</span></div>
+        <h2>FNAF 3</h2><p>Face Springtrap inside Fazbear's Fright horror attraction.</p>
+        <a class="play" href="#play-fnaf3" id="launchFnaf3">Play game ▶</a>
+      </article>
+      <article class="card" data-name="FNAF 4">
+        <div class="thumb" role="img" aria-label="Five Nights at Freddy's 4"><img src="https://cdn.akamai.steamstatic.com/steam/apps/388090/header.jpg" alt="" onerror="this.remove()"><span>FNAF 4</span></div>
+        <h2>FNAF 4</h2><p>Survive the nightmare in your own bedroom.</p>
+        <a class="play" href="#play-fnaf4" id="launchFnaf4">Play game ▶</a>
+      </article>
+      <article class="card" data-name="FNAF: Sister Location">
+        <div class="thumb" role="img" aria-label="Sister Location"><img src="https://cdn.akamai.steamstatic.com/steam/apps/506610/header.jpg" alt="" onerror="this.remove()"><span>SISTER LOCATION</span></div>
+        <h2>FNAF: Sister Location</h2><p>Descend into Circus Baby's underground facility.</p>
+        <a class="play" href="#play-fnaf-sl" id="launchFnafSl">Play game ▶</a>
+      </article>
+      <article class="card" data-name="FNAF World">
+        <div class="thumb" role="img" aria-label="FNAF World"><img src="https://cdn.akamai.steamstatic.com/steam/apps/427920/header.jpg" alt="" onerror="this.remove()"><span>FNAF WORLD</span></div>
+        <h2>FNAF World</h2><p>Join Freddy and friends in a whimsical RPG adventure.</p>
+        <a class="play" href="#play-fnaf-world" id="launchFnafWorld">Play game ▶</a>
+      </article>
+      <article class="card" data-name="FNAF: Pizzeria Simulator">
+        <div class="thumb" role="img" aria-label="Pizzeria Simulator"><img src="https://cdn.akamai.steamstatic.com/steam/apps/738060/header.jpg" alt="" onerror="this.remove()"><span>PIZZERIA SIM</span></div>
+        <h2>FNAF: Pizzeria Simulator</h2><p>Run your own Freddy Fazbear's Pizza — but survive the night shift.</p>
+        <a class="play" href="#play-fnaf-ps" id="launchFnafPs">Play game ▶</a>
+      </article>
+      <article class="card" data-name="FNAF: Ultimate Custom Night">
+        <div class="thumb" role="img" aria-label="Ultimate Custom Night"><img src="https://cdn.akamai.steamstatic.com/steam/apps/871720/header.jpg" alt="" onerror="this.remove()"><span>ULTIMATE CUSTOM NIGHT</span></div>
+        <h2>FNAF: Ultimate Custom Night</h2><p>Mix and match 50 animatronics with custom difficulty.</p>
+        <a class="play" href="#play-fnaf-ucn" id="launchFnafUcn">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Five Nights at Candy's">
+        <div class="thumb" role="img" aria-label="Five Nights at Candy's"><img src="https://cdn.phototourl.com/member/2026-10-09-321bd3a3-136c-49fa-af09-058f1f64ecf6.png" alt="" onerror="this.remove()"><span>FIVE NIGHTS AT CANDY'S</span></div>
+        <h2>Five Nights at Candy's</h2><p>Survive the night at Candy's Burgers & Fries.</p>
+        <a class="play" href="#play-fnac" id="launchFnafCandys">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Five Nights at Candy's 2">
+        <div class="thumb" role="img" aria-label="Five Nights at Candy's 2"><img src="https://cdn.phototourl.com/member/2026-10-09-568245b6-6260-4913-8744-ce14f4beedc9.png" alt="" onerror="this.remove()"><span>FIVE NIGHTS AT CANDY'S 2</span></div>
+        <h2>Five Nights at Candy's 2</h2><p>Return to the abandoned factory and survive the night.</p>
+        <a class="play" href="#play-fnac2" id="launchFnafCandys2">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Five Nights at Candy's 3">
+        <div class="thumb" role="img" aria-label="Five Nights at Candy's 3"><img src="https://user42753.na.imgto.link/public/20261009/095440458e151b42ddb74dbc-image-2026-10-09-213817164.avif" alt="" onerror="this.remove()"><span>FIVE NIGHTS AT CANDY'S 3</span></div>
+        <h2>Five Nights at Candy's 3</h2><p>Survive the night in a child's bedroom with only a flashlight.</p>
+        <a class="play" href="#play-fnac3" id="launchFnafCandys3">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Five Nights at Winston's">
+        <div class="thumb" role="img" aria-label="Five Nights at Winston's"><img src="https://cdn.phototourl.com/member/2026-10-09-52ac9de7-51a4-4d50-bec3-cda306120f1f.png" alt="" onerror="this.remove()"><span>FIVE NIGHTS AT WINSTON'S</span></div>
+        <h2>Five Nights at Winston's</h2><p>Survive five nights in a haunted pizzeria.</p>
+        <a class="play" href="#play-fnaw" id="launchFnafWinstons">Play game ▶</a>
+      </article>
+      <article class="card" data-name="The Man in the Window">
+        <div class="thumb" role="img" aria-label="The Man in the Window"><img src="https://user42753.na.imgto.link/public/20261009/8e77ee9af15e560d73d84ce8-image-2026-10-09-122419082.avif" alt="" onerror="this.remove()"><span>THE MAN IN THE WINDOW</span></div>
+        <h2>The Man in the Window</h2><p>A chilling horror experience — whatever you do, don't look away.</p>
+        <a class="play" href="#play-man-window" id="launchManWindow">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Fears to Fathom">
+        <div class="thumb" role="img" aria-label="Fears to Fathom"><img src="https://user42753.na.imgto.link/public/20261010/b851f77442a3cec9b1de3bb4-image-2026-10-10-111952635.avif" alt="" onerror="this.remove()"><span>FEARS TO FATHOM</span></div>
+        <h2>Fears to Fathom</h2><p>An episodic first-person horror series — survive the night and see if fear can be fathomed.</p>
+        <a class="play" href="#play-fears-to-fathom" id="launchFearsToFathom">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Evil Nun: Schools Out">
+        <div class="thumb" role="img" aria-label="Evil Nun: Schools Out"><img src="https://user42753.na.imgto.link/public/20261010/2c957f78b3904eb40eca6b01-image-2026-10-10-144610725.avif" alt="" onerror="this.remove()"><span>EVIL NUN: SCHOOLS OUT</span></div>
+        <h2>Evil Nun: Schools Out</h2><p>School's out — but the Evil Nun is still hunting. Escape the cursed school before she finds you.</p>
+        <a class="play" href="#play-evil-nun" id="launchEvilNun">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Baldi's Basics">
+        <div class="thumb" role="img" aria-label="Baldi's Basics"><img src="https://user42753.na.imgto.link/public/20261010/8215128dd3fe51d37af6ed3d-image-2026-10-10-163641621.avif" alt="" onerror="this.remove()"><span>BALDI'S BASICS</span></div>
+        <h2>Baldi's Basics</h2><p>Collect all seven notebooks while Baldi chases you through the school.</p>
+        <a class="play" href="#play-baldis-basics" id="launchBaldisBasics">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Baldi Plus">
+        <div class="thumb" role="img" aria-label="Baldi Plus"><img src="https://user42753.na.imgto.link/public/20261010/cd74ac0c5d027a8dbc93baf5-image-2026-10-10-163530129.avif" alt="" onerror="this.remove()"><span>BALDI PLUS</span></div>
+        <h2>Baldi Plus</h2><p>An enhanced Baldi experience with new content and challenges.</p>
+        <a class="play" href="#play-baldi-plus" id="launchBaldiPlus">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Baldi Remaster">
+        <div class="thumb" role="img" aria-label="Baldi Remaster"><img src="https://user42753.na.imgto.link/public/20261010/c0459a879aded5112dbe419b-image-2026-10-10-163612515.avif" alt="" onerror="this.remove()"><span>BALDI REMASTER</span></div>
+        <h2>Baldi Remaster</h2><p>The classic Baldi's Basics rebuilt with a fresh coat of paint.</p>
+        <a class="play" href="#play-baldi-remaster" id="launchBaldiRemaster">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Baldi Decomp">
+        <div class="thumb" role="img" aria-label="Baldi Decomp"><img src="https://user42753.na.imgto.link/public/20261010/dea80533149d9ba04da78a46-image-2026-10-10-163452061.avif" alt="" onerror="this.remove()"><span>BALDI DECOMP</span></div>
+        <h2>Baldi Decomp</h2><p>A decompiled dive into Baldi's Basics — explore the game's inner workings.</p>
+        <a class="play" href="#play-baldi-decomp" id="launchBaldiDecomp">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Baldi's Basics Field Trip">
+        <div class="thumb" role="img" aria-label="Baldi's Basics Field Trip"><img src="https://user42753.na.imgto.link/public/20261010/a2676728ae097024993efa59-image-2026-10-10-163803124.avif" alt="" onerror="this.remove()"><span>BALDI'S BASICS FIELD TRIP</span></div>
+        <h2>Baldi's Basics Field Trip</h2><p>Join Baldi on a chaotic field trip full of puzzles and pursuers.</p>
+        <a class="play" href="#play-baldis-basics-field-trip" id="launchBaldisBasicsFieldTrip">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Baldi's Basics Plus">
+        <div class="thumb" role="img" aria-label="Baldi's Basics Plus"><img src="https://cdn.phototourl.com/member/2026-10-10-2718b7f7-853c-4bd8-8ba4-db6b0ba480c7.png" alt="" onerror="this.remove()"><span>BALDI'S BASICS PLUS</span></div>
+        <h2>Baldi's Basics Plus</h2><p>The definitive Baldi experience — more notebooks, more chaos, more fun.</p>
+        <a class="play" href="#play-baldis-basics-plus" id="launchBaldisBasicsPlus">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Blood Money">
+        <div class="thumb" role="img" aria-label="Blood Money"><img src="https://user42753.na.imgto.link/public/20261009/92682811f90f36d3a058963d-image-2026-10-09-122706819.avif" alt="" onerror="this.remove()"><span>BLOOD MONEY</span></div>
+        <h2>Blood Money</h2><p>Clock in for a shift you won't forget — a dark FNAF fan game.</p>
+        <a class="play" href="#play-blood-money" id="launchBloodMoney">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Blood Money 2">
+        <div class="thumb" role="img" aria-label="Blood Money 2"><img src="https://user42753.na.imgto.link/public/20261009/e601721059ccfee62cfcfb03-image-2026-10-09-143844525.avif" alt="" onerror="this.remove()"><span>BLOOD MONEY 2</span></div>
+        <h2>Blood Money 2</h2><p>The shift continues — deeper, darker, and deadlier.</p>
+        <a class="play" href="#play-blood-money-2" id="launchBloodMoney2">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Death Chase">
+        <div class="thumb" role="img" aria-label="Death Chase"><img src="https://user42753.na.imgto.link/public/20261010/ee1439799b83f372a6240bd3-image-2026-10-10-111006912.avif" alt="" onerror="this.remove()"><span>DEATH CHASE</span></div>
+        <h2>Death Chase</h2><p>Outrun the darkness in this high-speed endless chase where one wrong move is your last.</p>
+        <a class="play" href="#play-death-chase" id="launchDeathChase">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Death Run 3D">
+        <div class="thumb" role="img" aria-label="Death Run 3D"><img src="https://user42753.na.imgto.link/public/20261010/f8d06f932d50ac8519569bd6-image-2026-10-10-111722279.avif" alt="" onerror="this.remove()"><span>DEATH RUN 3D</span></div>
+        <h2>Death Run 3D</h2><p>Sprint through neon 3D tunnels, dodge deadly obstacles, and survive the fastest run of your life.</p>
+        <a class="play" href="#play-death-run-3d" id="launchDeathRun3D">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Dummy Never Fails">
+        <div class="thumb" role="img" aria-label="Dummy Never Fails"><img src="https://user42753.na.imgto.link/public/20261010/c749be048a223644b901aa57-image-2026-10-10-111230581.avif" alt="" onerror="this.remove()"><span>DUMMY NEVER FAILS</span></div>
+        <h2>Dummy Never Fails</h2><p>Wreck the dummy in increasingly brutal ways — no matter what, the dummy never fails.</p>
+        <a class="play" href="#play-dummy-never-fails" id="launchDummyNeverFails">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Dummy Never Fails 2">
+        <div class="thumb" role="img" aria-label="Dummy Never Fails 2"><img src="https://user42753.na.imgto.link/public/20261010/267e633974b5861083b2621d-image-2026-10-10-111411439.avif" alt="" onerror="this.remove()"><span>DUMMY NEVER FAILS 2</span></div>
+        <h2>Dummy Never Fails 2</h2><p>The dummy is back and even more indestructible in this chaotic sequel full of new traps and physics madness.</p>
+        <a class="play" href="#play-dummy-never-fails-2" id="launchDummyNeverFails2">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Survival Race">
+        <div class="thumb" role="img" aria-label="Survival Race"><img src="https://user42753.na.imgto.link/public/20261009/edd689cadeb5682cd15ba575-image-2026-10-09-144133126.avif" alt="" onerror="this.remove()"><span>SURVIVAL RACE</span></div>
+        <h2>Survival Race</h2><p>Race against time, traps, and terror.</p>
+        <a class="play" href="#play-survival-race" id="launchSurvivalRace">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Top Speed Racing 3D">
+        <div class="thumb" role="img" aria-label="Top Speed Racing 3D"><img src="https://user42753.na.imgto.link/public/20261009/d0deece67087bce81fee2005-image-2026-10-09-144353543.avif" alt="" onerror="this.remove()"><span>TOP SPEED RACING 3D</span></div>
+        <h2>Top Speed Racing 3D</h2><p>Hit the gas and push your car to the limit.</p>
+        <a class="play" href="#play-top-speed-racing-3d" id="launchTopSpeedRacing">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Penalty Shooters">
+        <div class="thumb" role="img" aria-label="Penalty Shooters"><img src="https://user42753.na.imgto.link/public/20261009/bbdff3da17085ab3870cb45f-image-2026-10-09-144616452.avif" alt="" onerror="this.remove()"><span>PENALTY SHOOTERS</span></div>
+        <h2>Penalty Shooters</h2><p>Step up to the spot and score the winning goal.</p>
+        <a class="play" href="#play-penalty-shooters" id="launchPenaltyShooters">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Penalty Shooter 2">
+        <div class="thumb" role="img" aria-label="Penalty Shooter 2"><img src="https://user42753.na.imgto.link/public/20261009/b58c87a5372af80280bda610-image-2026-10-09-144814907.avif" alt="" onerror="this.remove()"><span>PENALTY SHOOTER 2</span></div>
+        <h2>Penalty Shooter 2</h2><p>Take the shootout to the next level.</p>
+        <a class="play" href="#play-penalty-shooter-2" id="launchPenaltyShooter2">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Soccer Skills Euro Cup">
+        <div class="thumb" role="img" aria-label="Soccer Skills Euro Cup"><img src="https://user42753.na.imgto.link/public/20261009/1edb5ccc2637a9ec9b3e4756-image-2026-10-09-145117662.avif" alt="" onerror="this.remove()"><span>SOCCER SKILLS EURO CUP</span></div>
+        <h2>Soccer Skills Euro Cup</h2><p>Show off your ball skills and lead your team to glory.</p>
+        <a class="play" href="#play-soccer-skills-euro-cup" id="launchSoccerSkills">Play game ▶</a>
+      </article>
+      <article class="card" data-name="The Backrooms">
+        <div class="thumb" role="img" aria-label="The Backrooms"><img src="https://user42753.na.imgto.link/public/20261009/399d8474f7369089337eada3-image-2026-10-09-145450251.avif" alt="" onerror="this.remove()"><span>THE BACKROOMS</span></div>
+        <h2>The Backrooms</h2><p>Noclip out of reality and wander the endless yellow halls.</p>
+        <a class="play" href="#play-the-backrooms" id="launchBackrooms">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Paper.io 2">
+        <div class="thumb" role="img" aria-label="Paper.io 2"><img src="https://user42753.na.imgto.link/public/20261009/87278a2f13e09927b500fb4c-image-2026-10-09-173005099.avif" alt="" onerror="this.remove()"><span>PAPER.IO 2</span></div>
+        <h2>Paper.io 2</h2><p>Expand your territory and dominate the map.</p>
+        <a class="play" href="#play-paper-io-2" id="launchPaperIo2">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Skiing Fred">
+        <div class="thumb" role="img" aria-label="Skiing Fred"><img src="https://cdn.phototourl.com/member/2026-10-09-12cbc57f-be65-4090-891b-523ad19a4668.png" alt="" onerror="this.remove()"><span>SKIING FRED</span></div>
+        <h2>Skiing Fred</h2><p>Ski down the mountain while outrunning the Grim Reaper.</p>
+        <a class="play" href="#play-skiing-fred" id="launchSkiingFred">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Running Fred">
+        <div class="thumb" role="img" aria-label="Running Fred"><img src="https://cdn.phototourl.com/member/2026-10-09-04f9c5ab-0087-4d5f-bf03-525b9bca2402.png" alt="" onerror="this.remove()"><span>RUNNING FRED</span></div>
+        <h2>Running Fred</h2><p>Run, jump, and dodge deadly traps.</p>
+        <a class="play" href="#play-running-fred" id="launchRunningFred">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Falling Fred">
+        <div class="thumb" role="img" aria-label="Falling Fred"><img src="https://user42753.na.imgto.link/public/20261009/e440a4edf6bfaa149b104bbe-image-2026-10-09-212823884.avif" alt="" onerror="this.remove()"><span>FALLING FRED</span></div>
+        <h2>Falling Fred</h2><p>Fall through a deadly tower of traps and hazards.</p>
+        <a class="play" href="#play-falling-fred" id="launchFallingFred">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Super Falling Fred">
+        <div class="thumb" role="img" aria-label="Super Falling Fred"><img src="https://user42753.na.imgto.link/public/20261010/8925e3dbb7323c70c8741c73-image-2026-10-10-163054570.avif" alt="" onerror="this.remove()"><span>SUPER FALLING FRED</span></div>
+        <h2>Super Falling Fred</h2><p>Plunge through a deadly vertical gauntlet — dodge saw blades, spikes, and worse on the way down.</p>
+        <a class="play" href="#play-super-falling-fred" id="launchSuperFallingFred">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Slender: The Eight Pages">
+        <div class="thumb" role="img" aria-label="Slender"><img src="https://cdn.phototourl.com/member/2026-10-09-9aba79a6-ba88-4a68-8908-3f0ef461caed.png" alt="" onerror="this.remove()"><span>SLENDER</span></div>
+        <h2>Slender: The Eight Pages</h2><p>Collect eight pages while being stalked by the Slender Man.</p>
+        <a class="play" href="#play-slender" id="launchSlender">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Time Shooter">
+        <div class="thumb" role="img" aria-label="Time Shooter"><img src="https://cdn.phototourl.com/member/2026-10-09-f3c00e68-eb0a-49e6-bd17-531e3dcc5ea1.png" alt="" onerror="this.remove()"><span>TIME SHOOTER</span></div>
+        <h2>Time Shooter</h2><p>Slow down time and take out enemies.</p>
+        <a class="play" href="#play-time-shooter" id="launchTimeShooter">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Geometry Dash">
+        <div class="thumb" role="img" aria-label="Geometry Dash"><img src="https://cdn.akamai.steamstatic.com/steam/apps/322170/header.jpg" alt="" onerror="this.remove()"><span>GEOMETRY DASH</span></div>
+        <h2>Geometry Dash</h2><p>Jump and fly your way through danger.</p>
+        <a class="play" href="#play-geometry-dash" id="launchGeometryDash">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Granny">
+        <div class="thumb" role="img" aria-label="Granny"><img src="https://cdn.phototourl.com/member/2026-10-09-8f6334d6-6364-4b04-8636-1c4272b7a7bb.png" alt="" onerror="this.remove()"><span>GRANNY</span></div>
+        <h2>Granny</h2><p>Escape a decrepit house while avoiding Granny.</p>
+        <a class="play" href="#play-granny" id="launchGranny">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Granny 3">
+        <div class="thumb" role="img" aria-label="Granny 3"><img src="https://user42753.na.imgto.link/public/20261009/da0d929f886390a9a0d4554b-image-2026-10-09-222539246.avif" alt="" onerror="this.remove()"><span>GRANNY 3</span></div>
+        <h2>Granny 3</h2><p>Trapped in a decaying mansion with only five days to escape.</p>
+        <a class="play" href="#play-granny-3" id="launchGranny3">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Gunspin">
+        <div class="thumb" role="img" aria-label="Gunspin"><img src="https://user42753.na.imgto.link/public/20261009/9a50f4c7bb51473208f5c428-image-2026-10-09-222950967.avif" alt="" onerror="this.remove()"><span>GUNSPIN</span></div>
+        <h2>Gunspin</h2><p>Use recoil to launch your gun as far as possible.</p>
+        <a class="play" href="#play-gunspin" id="launchGunspin">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Steal a Brainrot">
+        <div class="thumb" role="img" aria-label="Steal a Brainrot"><img src="https://user42753.na.imgto.link/public/20261009/e02cdd355ece0bcd21269947-image-2026-10-09-223328163.avif" alt="" onerror="this.remove()"><span>STEAL A BRAINROT</span></div>
+        <h2>Steal a Brainrot</h2><p>Sneak, steal, and outsmart your way through.</p>
+        <a class="play" href="#play-steal-brainrot" id="launchStealBrainrot">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Bendy and the Ink Machine">
+        <div class="thumb" role="img" aria-label="Bendy"><img src="https://cdn.akamai.steamstatic.com/steam/apps/622650/header.jpg" alt="" onerror="this.remove()"><span>BENDY</span></div>
+        <h2>Bendy and the Ink Machine</h2><p>Uncover the mystery of an abandoned animation studio.</p>
+        <a class="play" href="#play-bendy" id="launchBendy">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Among Us">
+        <div class="thumb" role="img" aria-label="Among Us"><img src="https://cdn.akamai.steamstatic.com/steam/apps/945360/header.jpg" alt="" onerror="this.remove()"><span>AMONG US</span></div>
+        <h2>Among Us</h2><p>Find the Impostor aboard the Skeld.</p>
+        <a class="play" href="#play-among-us" id="launchAmongUs">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Subway Surfers">
+        <div class="thumb" role="img" aria-label="Subway Surfers"><img src="https://upload.wikimedia.org/wikipedia/ru/1/1e/Subway_Surfers_logo.png" alt="" onerror="this.remove()"><span>SUBWAY</span></div>
+        <h2>Subway Surfers</h2><p>Dash, dodge, and outrun the inspector.</p>
+        <a class="play" href="#play-subway" id="launchSubway">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Subway Runner">
+        <div class="thumb" role="img" aria-label="Subway Runner"><img src="https://upload.wikimedia.org/wikipedia/ru/1/1e/Subway_Surfers_logo.png" alt="" onerror="this.remove()"><span>SUBWAY RUNNER</span></div>
+        <h2>Subway Runner</h2><p>Sprint through the subway and rack up the highest score.</p>
+        <a class="play" href="#play-subway-runner" id="launchSubwayRunner">Play game ▶</a>
+      </article>
+      <article class="card" data-name="Plants vs. Zombies">
+        <div class="thumb" role="img" aria-label="Plants vs Zombies"><img src="https://cdn.akamai.steamstatic.com/steam/apps/3590/header.jpg" alt="" onerror="this.remove()"><span>PvZ</span></div>
+        <h2>Plants vs. Zombies</h2><p>Defend your lawn from waves of zombies.</p>
+        <a class="play" href="#play-pvz" id="launchPvz">Play game ▶</a>
+      </article>
+
+      <div class="no-results" id="noResultsGames">
+        <strong>No games found</strong>
+        Try a different search term, or clear the search bar to see everything.
+      </div>
+    </section>
+
+    <div class="section-heading" id="apps-section"><h2>Apps</h2><p>Your favorite web apps, right inside VOID</p></div>
+
+    <section class="grid apps" id="apps">
+      <article class="card app-card" data-name="YouTube">
+        <div class="thumb youtube-thumb" role="img" aria-label="YouTube"><span>YOUTUBE</span></div>
+        <h2>YouTube</h2><p>Watch videos right inside VOID.</p>
+        <a class="play" href="#play-youtube" id="launchYouTube">Open app ▶</a>
+      </article>
+      <article class="card app-card" data-name="SoundCloud">
+        <div class="thumb soundcloud-thumb" role="img" aria-label="SoundCloud"><span>SOUNDCLOUD</span></div>
+        <h2>SoundCloud</h2><p>Stream music right inside VOID.</p>
+        <a class="play" href="#play-soundcloud" id="launchSoundCloud">Open app ▶</a>
+      </article>
+
+      <div class="no-results" id="noResultsApps">
+        <strong>No apps found</strong>
+        Try a different search term, or clear the search bar to see everything.
+      </div>
+    </section>
+  </main>
+
+  <footer>VOID © 2026 · Browser game hub.</footer>
+</div>
+
+<!-- ==================== GAME MODALS ==================== -->
+<div id="fnafGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="FNAF">
+  <div class="fnaf-shell" id="fnafShell">
+    <div class="fnaf-top"><strong>VOID // FNAF</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="fnafShell">⛶ Fullscreen</button><button id="closeFnaf">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="fnafFrame" title="FNAF" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/five-nights-at-freddys/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="fnaf2Game" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="FNAF 2">
+  <div class="fnaf-shell" id="fnaf2Shell">
+    <div class="fnaf-top"><strong>VOID // FNAF 2</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="fnaf2Shell">⛶ Fullscreen</button><button id="closeFnaf2">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="fnaf2Frame" title="FNAF 2" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/five-nights-at-freddys-2/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="fnaf3Game" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="FNAF 3">
+  <div class="fnaf-shell" id="fnaf3Shell">
+    <div class="fnaf-top"><strong>VOID // FNAF 3</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="fnaf3Shell">⛶ Fullscreen</button><button id="closeFnaf3">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="fnaf3Frame" title="FNAF 3" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/five-nights-at-freddys-3/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="fnaf4Game" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="FNAF 4">
+  <div class="fnaf-shell" id="fnaf4Shell">
+    <div class="fnaf-top"><strong>VOID // FNAF 4</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="fnaf4Shell">⛶ Fullscreen</button><button id="closeFnaf4">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="fnaf4Frame" title="FNAF 4" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/five-nights-at-freddys-4/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="fnafSlGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Sister Location">
+  <div class="fnaf-shell" id="fnafSlShell">
+    <div class="fnaf-top"><strong>VOID // FNAF: SISTER LOCATION</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="fnafSlShell">⛶ Fullscreen</button><button id="closeFnafSl">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="fnafSlFrame" title="Sister Location" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/fnaf-sister-location/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="fnafWorldGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="FNAF World">
+  <div class="fnaf-shell" id="fnafWorldShell">
+    <div class="fnaf-top"><strong>VOID // FNAF WORLD</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="fnafWorldShell">⛶ Fullscreen</button><button id="closeFnafWorld">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="fnafWorldFrame" title="FNAF World" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/fnaf-world/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="fnafPsGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Pizzeria Simulator">
+  <div class="fnaf-shell" id="fnafPsShell">
+    <div class="fnaf-top"><strong>VOID // FNAF: PIZZERIA SIMULATOR</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="fnafPsShell">⛶ Fullscreen</button><button id="closeFnafPs">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="fnafPsFrame" title="Pizzeria Simulator" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/fnaf-pizzeria-simulator/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="fnafUcnGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Ultimate Custom Night">
+  <div class="fnaf-shell" id="fnafUcnShell">
+    <div class="fnaf-top"><strong>VOID // FNAF: ULTIMATE CUSTOM NIGHT</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="fnafUcnShell">⛶ Fullscreen</button><button id="closeFnafUcn">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="fnafUcnFrame" title="Ultimate Custom Night" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/fnaf-ultimate-custom-night/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="fnafCandysGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Five Nights at Candy's">
+  <div class="fnaf-shell" id="fnafCandysShell">
+    <div class="fnaf-top"><strong>VOID // FIVE NIGHTS AT CANDY'S</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="fnafCandysShell">⛶ Fullscreen</button><button id="closeFnafCandys">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="fnafCandysFrame" title="Five Nights at Candy's" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/five-nights-at-candys/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="fnafCandys2Game" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Five Nights at Candy's 2">
+  <div class="fnaf-shell" id="fnafCandys2Shell">
+    <div class="fnaf-top"><strong>VOID // FIVE NIGHTS AT CANDY'S 2</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="fnafCandys2Shell">⛶ Fullscreen</button><button id="closeFnafCandys2">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="fnafCandys2Frame" title="Five Nights at Candy's 2" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/five-nights-at-candys-2/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="fnafCandys3Game" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Five Nights at Candy's 3">
+  <div class="fnaf-shell" id="fnafCandys3Shell">
+    <div class="fnaf-top"><strong>VOID // FIVE NIGHTS AT CANDY'S 3</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="fnafCandys3Shell">⛶ Fullscreen</button><button id="closeFnafCandys3">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="fnafCandys3Frame" title="Five Nights at Candy's 3" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/five-nights-at-candys-3/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="fnafWinstonsGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Five Nights at Winston's">
+  <div class="fnaf-shell" id="fnafWinstonsShell">
+    <div class="fnaf-top"><strong>VOID // FIVE NIGHTS AT WINSTON'S</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="fnafWinstonsShell">⛶ Fullscreen</button><button id="closeFnafWinstons">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="fnafWinstonsFrame" title="Five Nights at Winston's" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/five-nights-at-winstons/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="manWindowGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="The Man in the Window">
+  <div class="fnaf-shell" id="manWindowShell">
+    <div class="fnaf-top"><strong>VOID // THE MAN IN THE WINDOW</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="manWindowShell">⛶ Fullscreen</button><button id="closeManWindow">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="manWindowFrame" title="The Man in the Window" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/the-man-in-the-window/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="fearsToFathomGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Fears to Fathom">
+  <div class="fnaf-shell" id="fearsToFathomShell">
+    <div class="fnaf-top"><strong>VOID // FEARS TO FATHOM</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="fearsToFathomShell">⛶ Fullscreen</button><button id="closeFearsToFathom">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="fearsToFathomFrame" title="Fears to Fathom" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/fears-to-fathom/" allow="fullscreen; autoplay; gamepad; pointer-lock" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="evilNunGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Evil Nun: Schools Out">
+  <div class="fnaf-shell" id="evilNunShell">
+    <div class="fnaf-top"><strong>VOID // EVIL NUN: SCHOOLS OUT</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="evilNunShell">⛶ Fullscreen</button><button id="closeEvilNun">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="evilNunFrame" title="Evil Nun: Schools Out" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/evil-nun-schools-out/" allow="fullscreen; autoplay; gamepad; pointer-lock" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="baldisBasicsGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Baldi's Basics">
+  <div class="fnaf-shell" id="baldisBasicsShell">
+    <div class="fnaf-top"><strong>VOID // BALDI'S BASICS</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="baldisBasicsShell">⛶ Fullscreen</button><button id="closeBaldisBasics">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="baldisBasicsFrame" title="Baldi's Basics" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/baldis-basics/" allow="fullscreen; autoplay; gamepad; pointer-lock" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="baldiPlusGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Baldi Plus">
+  <div class="fnaf-shell" id="baldiPlusShell">
+    <div class="fnaf-top"><strong>VOID // BALDI PLUS</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="baldiPlusShell">⛶ Fullscreen</button><button id="closeBaldiPlus">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="baldiPlusFrame" title="Baldi Plus" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/baldi-plus/" allow="fullscreen; autoplay; gamepad; pointer-lock" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="baldiRemasterGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Baldi Remaster">
+  <div class="fnaf-shell" id="baldiRemasterShell">
+    <div class="fnaf-top"><strong>VOID // BALDI REMASTER</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="baldiRemasterShell">⛶ Fullscreen</button><button id="closeBaldiRemaster">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="baldiRemasterFrame" title="Baldi Remaster" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/baldi-remaster/" allow="fullscreen; autoplay; gamepad; pointer-lock" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="baldiDecompGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Baldi Decomp">
+  <div class="fnaf-shell" id="baldiDecompShell">
+    <div class="fnaf-top"><strong>VOID // BALDI DECOMP</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="baldiDecompShell">⛶ Fullscreen</button><button id="closeBaldiDecomp">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="baldiDecompFrame" title="Baldi Decomp" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/baldi-decomp/" allow="fullscreen; autoplay; gamepad; pointer-lock" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="baldisBasicsFieldTripGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Baldi's Basics Field Trip">
+  <div class="fnaf-shell" id="baldisBasicsFieldTripShell">
+    <div class="fnaf-top"><strong>VOID // BALDI'S BASICS FIELD TRIP</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="baldisBasicsFieldTripShell">⛶ Fullscreen</button><button id="closeBaldisBasicsFieldTrip">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="baldisBasicsFieldTripFrame" title="Baldi's Basics Field Trip" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/baldis-basics-field-trip/" allow="fullscreen; autoplay; gamepad; pointer-lock" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="baldisBasicsPlusGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Baldi's Basics Plus">
+  <div class="fnaf-shell" id="baldisBasicsPlusShell">
+    <div class="fnaf-top"><strong>VOID // BALDI'S BASICS PLUS</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="baldisBasicsPlusShell">⛶ Fullscreen</button><button id="closeBaldisBasicsPlus">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="baldisBasicsPlusFrame" title="Baldi's Basics Plus" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/baldis-basics-plus/" allow="fullscreen; autoplay; gamepad; pointer-lock" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="bloodMoneyGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Blood Money">
+  <div class="fnaf-shell" id="bloodMoneyShell">
+    <div class="fnaf-top"><strong>VOID // BLOOD MONEY</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="bloodMoneyShell">⛶ Fullscreen</button><button id="closeBloodMoney">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="bloodMoneyFrame" title="Blood Money" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/blood-money/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="bloodMoney2Game" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Blood Money 2">
+  <div class="fnaf-shell" id="bloodMoney2Shell">
+    <div class="fnaf-top"><strong>VOID // BLOOD MONEY 2</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="bloodMoney2Shell">⛶ Fullscreen</button><button id="closeBloodMoney2">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="bloodMoney2Frame" title="Blood Money 2" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/blood-money-2/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="deathChaseGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Death Chase">
+  <div class="fnaf-shell" id="deathChaseShell">
+    <div class="fnaf-top"><strong>VOID // DEATH CHASE</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="deathChaseShell">⛶ Fullscreen</button><button id="closeDeathChase">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="deathChaseFrame" title="Death Chase" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/death-chase/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="deathRun3DGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Death Run 3D">
+  <div class="fnaf-shell" id="deathRun3DShell">
+    <div class="fnaf-top"><strong>VOID // DEATH RUN 3D</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="deathRun3DShell">⛶ Fullscreen</button><button id="closeDeathRun3D">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="deathRun3DFrame" title="Death Run 3D" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/death-run-3d/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="dummyNeverFailsGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Dummy Never Fails">
+  <div class="fnaf-shell" id="dummyNeverFailsShell">
+    <div class="fnaf-top"><strong>VOID // DUMMY NEVER FAILS</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="dummyNeverFailsShell">⛶ Fullscreen</button><button id="closeDummyNeverFails">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="dummyNeverFailsFrame" title="Dummy Never Fails" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/dummy-never-fails/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="dummyNeverFails2Game" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Dummy Never Fails 2">
+  <div class="fnaf-shell" id="dummyNeverFails2Shell">
+    <div class="fnaf-top"><strong>VOID // DUMMY NEVER FAILS 2</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="dummyNeverFails2Shell">⛶ Fullscreen</button><button id="closeDummyNeverFails2">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="dummyNeverFails2Frame" title="Dummy Never Fails 2" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/dummy-never-fails-2/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="survivalRaceGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Survival Race">
+  <div class="fnaf-shell" id="survivalRaceShell">
+    <div class="fnaf-top"><strong>VOID // SURVIVAL RACE</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="survivalRaceShell">⛶ Fullscreen</button><button id="closeSurvivalRace">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="survivalRaceFrame" title="Survival Race" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/survival-race/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="topSpeedRacingGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Top Speed Racing 3D">
+  <div class="fnaf-shell" id="topSpeedRacingShell">
+    <div class="fnaf-top"><strong>VOID // TOP SPEED RACING 3D</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="topSpeedRacingShell">⛶ Fullscreen</button><button id="closeTopSpeedRacing">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="topSpeedRacingFrame" title="Top Speed Racing 3D" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/top-speed-racing-3d/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="penaltyShootersGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Penalty Shooters">
+  <div class="fnaf-shell" id="penaltyShootersShell">
+    <div class="fnaf-top"><strong>VOID // PENALTY SHOOTERS</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="penaltyShootersShell">⛶ Fullscreen</button><button id="closePenaltyShooters">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="penaltyShootersFrame" title="Penalty Shooters" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/penalty-shooters/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="penaltyShooter2Game" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Penalty Shooter 2">
+  <div class="fnaf-shell" id="penaltyShooter2Shell">
+    <div class="fnaf-top"><strong>VOID // PENALTY SHOOTER 2</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="penaltyShooter2Shell">⛶ Fullscreen</button><button id="closePenaltyShooter2">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="penaltyShooter2Frame" title="Penalty Shooter 2" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/penalty-shooter-2/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="soccerSkillsGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Soccer Skills Euro Cup">
+  <div class="fnaf-shell" id="soccerSkillsShell">
+    <div class="fnaf-top"><strong>VOID // SOCCER SKILLS EURO CUP</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="soccerSkillsShell">⛶ Fullscreen</button><button id="closeSoccerSkills">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="soccerSkillsFrame" title="Soccer Skills Euro Cup" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/soccer-skills-euro-cup/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="backroomsGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="The Backrooms">
+  <div class="fnaf-shell" id="backroomsShell">
+    <div class="fnaf-top"><strong>VOID // THE BACKROOMS</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="backroomsShell">⛶ Fullscreen</button><button id="closeBackrooms">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="backroomsFrame" title="The Backrooms" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/the-backrooms/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="paperIo2Game" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Paper.io 2">
+  <div class="fnaf-shell" id="paperIo2Shell">
+    <div class="fnaf-top"><strong>VOID // PAPER.IO 2</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="paperIo2Shell">⛶ Fullscreen</button><button id="closePaperIo2">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="paperIo2Frame" title="Paper.io 2" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/paper-io-2/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="skiingFredGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Skiing Fred">
+  <div class="fnaf-shell" id="skiingFredShell">
+    <div class="fnaf-top"><strong>VOID // SKIING FRED</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="skiingFredShell">⛶ Fullscreen</button><button id="closeSkiingFred">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="skiingFredFrame" title="Skiing Fred" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/skiing-fred/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="runningFredGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Running Fred">
+  <div class="fnaf-shell" id="runningFredShell">
+    <div class="fnaf-top"><strong>VOID // RUNNING FRED</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="runningFredShell">⛶ Fullscreen</button><button id="closeRunningFred">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="runningFredFrame" title="Running Fred" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/running-fred/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="fallingFredGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Falling Fred">
+  <div class="fnaf-shell" id="fallingFredShell">
+    <div class="fnaf-top"><strong>VOID // FALLING FRED</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="fallingFredShell">⛶ Fullscreen</button><button id="closeFallingFred">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="fallingFredFrame" title="Falling Fred" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/falling-fred/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="superFallingFredGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Super Falling Fred">
+  <div class="fnaf-shell" id="superFallingFredShell">
+    <div class="fnaf-top"><strong>VOID // SUPER FALLING FRED</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="superFallingFredShell">⛶ Fullscreen</button><button id="closeSuperFallingFred">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="superFallingFredFrame" title="Super Falling Fred" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/super-falling-fred/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="slenderGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Slender">
+  <div class="fnaf-shell" id="slenderShell">
+    <div class="fnaf-top"><strong>VOID // SLENDER: THE EIGHT PAGES</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="slenderShell">⛶ Fullscreen</button><button id="closeSlender">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="slenderFrame" title="Slender" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/slender/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="timeShooterGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Time Shooter">
+  <div class="fnaf-shell" id="timeShooterShell">
+    <div class="fnaf-top"><strong>VOID // TIME SHOOTER</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="timeShooterShell">⛶ Fullscreen</button><button id="closeTimeShooter">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="timeShooterFrame" title="Time Shooter" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/time-shooter/" allow="fullscreen; autoplay; gamepad; pointer-lock" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="geometryDashGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Geometry Dash">
+  <div class="fnaf-shell" id="geometryDashShell">
+    <div class="fnaf-top"><strong>VOID // GEOMETRY DASH</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="geometryDashShell">⛶ Fullscreen</button><button id="closeGeometryDash">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="geometryDashFrame" title="Geometry Dash" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/geometry-dash/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="grannyGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Granny">
+  <div class="fnaf-shell" id="grannyShell">
+    <div class="fnaf-top"><strong>VOID // GRANNY</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="grannyShell">⛶ Fullscreen</button><button id="closeGranny">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="grannyFrame" title="Granny" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/granny/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="granny3Game" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Granny 3">
+  <div class="fnaf-shell" id="granny3Shell">
+    <div class="fnaf-top"><strong>VOID // GRANNY 3</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="granny3Shell">⛶ Fullscreen</button><button id="closeGranny3">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="granny3Frame" title="Granny 3" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/granny-3/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="gunspinGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Gunspin">
+  <div class="fnaf-shell" id="gunspinShell">
+    <div class="fnaf-top"><strong>VOID // GUNSPIN</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="gunspinShell">⛶ Fullscreen</button><button id="closeGunspin">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="gunspinFrame" title="Gunspin" src="about:blank" data-game-url="https://gunspin-pro.github.io/file/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="stealBrainrotGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Steal a Brainrot">
+  <div class="fnaf-shell" id="stealBrainrotShell">
+    <div class="fnaf-top"><strong>VOID // STEAL A BRAINROT</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="stealBrainrotShell">⛶ Fullscreen</button><button id="closeStealBrainrot">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="stealBrainrotFrame" title="Steal a Brainrot" src="about:blank" data-game-url="https://st.8games.net/9/8g/igra-ukradi-brejnrot-original-3d/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="bendyGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Bendy">
+  <div class="fnaf-shell" id="bendyShell">
+    <div class="fnaf-top"><strong>VOID // BENDY AND THE INK MACHINE</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="bendyShell">⛶ Fullscreen</button><button id="closeBendy">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="bendyFrame" title="Bendy" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/bendy-and-the-ink-machine/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="amongUsGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Among Us">
+  <div class="fnaf-shell" id="amongUsShell">
+    <div class="fnaf-top"><strong>VOID // AMONG US</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="amongUsShell">⛶ Fullscreen</button><button id="closeAmongUs">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="amongUsFrame" title="Among Us" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/among-us/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="subwayGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Subway Surfers">
+  <div class="fnaf-shell" id="subwayShell">
+    <div class="fnaf-top"><strong>VOID // SUBWAY SURFERS</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="subwayShell">⛶ Fullscreen</button><button id="closeSubway">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="subwayFrame" title="Subway Surfers" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/subway-surfers/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="subwayRunnerGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Subway Runner">
+  <div class="fnaf-shell" id="subwayRunnerShell">
+    <div class="fnaf-top"><strong>VOID // SUBWAY RUNNER</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="subwayRunnerShell">⛶ Fullscreen</button><button id="closeSubwayRunner">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="subwayRunnerFrame" title="Subway Runner" src="about:blank" data-game-url="https://fivenightsatfreddysgame.io/play/subway-runner/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="pvzGame" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="Plants vs Zombies">
+  <div class="fnaf-shell" id="pvzShell">
+    <div class="fnaf-top"><strong>VOID // PLANTS VS. ZOMBIES</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><button class="fs-btn" data-fs-target="pvzShell">⛶ Fullscreen</button><button id="closePvz">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="pvzFrame" title="Plants vs Zombies" src="about:blank" data-game-url="https://plants-vs-zombies.bitbucket.io/file/" allow="fullscreen; autoplay; gamepad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="youtubeApp" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="YouTube">
+  <div class="fnaf-shell" id="youtubeShell">
+    <div class="fnaf-top"><strong>VOID // YOUTUBE</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><a class="topbtn" href="https://www.youtube.com" target="_blank" rel="noopener">Open in new tab ↗</a><button class="fs-btn" data-fs-target="youtubeShell">⛶ Fullscreen</button><button id="closeYouTube">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="youtubeFrame" title="YouTube" src="about:blank" data-app-url="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" allow="fullscreen; autoplay; encrypted-media; picture-in-picture; clipboard-write" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<div id="soundcloudApp" class="game-modal" hidden role="dialog" aria-modal="true" aria-label="SoundCloud">
+  <div class="fnaf-shell" id="soundcloudShell">
+    <div class="fnaf-top"><strong>VOID // SOUNDCLOUD</strong><div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;"><a class="topbtn" href="https://soundcloud.com/discover" target="_blank" rel="noopener">Open in new tab ↗</a><button class="fs-btn" data-fs-target="soundcloudShell">⛶ Fullscreen</button><button id="closeSoundCloud">✕ Back to VOID</button></div></div>
+    <iframe class="fnaf-frame" id="soundcloudFrame" title="SoundCloud" src="about:blank" data-app-url="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fodesza%2Fsay-my-name-feat-zyra&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" allow="fullscreen; autoplay; encrypted-media; clipboard-write" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+
+<script>
+  // ========== GAME LAUNCHER ==========
+  const games = [
+    { id:'Fnaf', modal:'fnafGame', frame:'fnafFrame' },
+    { id:'Fnaf2', modal:'fnaf2Game', frame:'fnaf2Frame' },
+    { id:'Fnaf3', modal:'fnaf3Game', frame:'fnaf3Frame' },
+    { id:'Fnaf4', modal:'fnaf4Game', frame:'fnaf4Frame' },
+    { id:'FnafSl', modal:'fnafSlGame', frame:'fnafSlFrame' },
+    { id:'FnafWorld', modal:'fnafWorldGame', frame:'fnafWorldFrame' },
+    { id:'FnafPs', modal:'fnafPsGame', frame:'fnafPsFrame' },
+    { id:'FnafUcn', modal:'fnafUcnGame', frame:'fnafUcnFrame' },
+    { id:'FnafCandys', modal:'fnafCandysGame', frame:'fnafCandysFrame' },
+    { id:'FnafCandys2', modal:'fnafCandys2Game', frame:'fnafCandys2Frame' },
+    { id:'FnafCandys3', modal:'fnafCandys3Game', frame:'fnafCandys3Frame' },
+    { id:'FnafWinstons', modal:'fnafWinstonsGame', frame:'fnafWinstonsFrame' },
+    { id:'ManWindow', modal:'manWindowGame', frame:'manWindowFrame' },
+    { id:'FearsToFathom', modal:'fearsToFathomGame', frame:'fearsToFathomFrame' },
+    { id:'EvilNun', modal:'evilNunGame', frame:'evilNunFrame' },
+    { id:'BaldisBasics', modal:'baldisBasicsGame', frame:'baldisBasicsFrame' },
+    { id:'BaldiPlus', modal:'baldiPlusGame', frame:'baldiPlusFrame' },
+    { id:'BaldiRemaster', modal:'baldiRemasterGame', frame:'baldiRemasterFrame' },
+    { id:'BaldiDecomp', modal:'baldiDecompGame', frame:'baldiDecompFrame' },
+    { id:'BaldisBasicsFieldTrip', modal:'baldisBasicsFieldTripGame', frame:'baldisBasicsFieldTripFrame' },
+    { id:'BaldisBasicsPlus', modal:'baldisBasicsPlusGame', frame:'baldisBasicsPlusFrame' },
+    { id:'BloodMoney', modal:'bloodMoneyGame', frame:'bloodMoneyFrame' },
+    { id:'BloodMoney2', modal:'bloodMoney2Game', frame:'bloodMoney2Frame' },
+    { id:'DeathChase', modal:'deathChaseGame', frame:'deathChaseFrame' },
+    { id:'DeathRun3D', modal:'deathRun3DGame', frame:'deathRun3DFrame' },
+    { id:'DummyNeverFails', modal:'dummyNeverFailsGame', frame:'dummyNeverFailsFrame' },
+    { id:'DummyNeverFails2', modal:'dummyNeverFails2Game', frame:'dummyNeverFails2Frame' },
+    { id:'SurvivalRace', modal:'survivalRaceGame', frame:'survivalRaceFrame' },
+    { id:'TopSpeedRacing', modal:'topSpeedRacingGame', frame:'topSpeedRacingFrame' },
+    { id:'PenaltyShooters', modal:'penaltyShootersGame', frame:'penaltyShootersFrame' },
+    { id:'PenaltyShooter2', modal:'penaltyShooter2Game', frame:'penaltyShooter2Frame' },
+    { id:'SoccerSkills', modal:'soccerSkillsGame', frame:'soccerSkillsFrame' },
+    { id:'Backrooms', modal:'backroomsGame', frame:'backroomsFrame' },
+    { id:'PaperIo2', modal:'paperIo2Game', frame:'paperIo2Frame' },
+    { id:'SkiingFred', modal:'skiingFredGame', frame:'skiingFredFrame' },
+    { id:'RunningFred', modal:'runningFredGame', frame:'runningFredFrame' },
+    { id:'FallingFred', modal:'fallingFredGame', frame:'fallingFredFrame' },
+    { id:'SuperFallingFred', modal:'superFallingFredGame', frame:'superFallingFredFrame' },
+    { id:'Slender', modal:'slenderGame', frame:'slenderFrame' },
+    { id:'TimeShooter', modal:'timeShooterGame', frame:'timeShooterFrame' },
+    { id:'GeometryDash', modal:'geometryDashGame', frame:'geometryDashFrame' },
+    { id:'Granny', modal:'grannyGame', frame:'grannyFrame' },
+    { id:'Granny3', modal:'granny3Game', frame:'granny3Frame' },
+    { id:'Gunspin', modal:'gunspinGame', frame:'gunspinFrame' },
+    { id:'StealBrainrot', modal:'stealBrainrotGame', frame:'stealBrainrotFrame' },
+    { id:'Bendy', modal:'bendyGame', frame:'bendyFrame' },
+    { id:'AmongUs', modal:'amongUsGame', frame:'amongUsFrame' },
+    { id:'Subway', modal:'subwayGame', frame:'subwayFrame' },
+    { id:'SubwayRunner', modal:'subwayRunnerGame', frame:'subwayRunnerFrame' },
+    { id:'Pvz', modal:'pvzGame', frame:'pvzFrame' },
+    { id:'YouTube', modal:'youtubeApp', frame:'youtubeFrame', isApp:true },
+    { id:'SoundCloud', modal:'soundcloudApp', frame:'soundcloudFrame', isApp:true }
+  ];
+
+  function unloadFrame(iframe) { try { iframe.src = 'about:blank'; } catch(e){} }
+
+  function makeOpen(cfg) {
+    return function(e) {
+      e.preventDefault();
+      const frame = document.getElementById(cfg.frame);
+      const modal = document.getElementById(cfg.modal);
+      const url = cfg.isApp ? frame.dataset.appUrl : frame.dataset.gameUrl;
+      if (frame.getAttribute('src') === 'about:blank' && url) {
+        frame.src = url;
+      }
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+    };
+  }
+  function makeClose(cfg) {
+    return function() {
+      unloadFrame(document.getElementById(cfg.frame));
+      document.getElementById(cfg.modal).hidden = true;
+      document.body.style.overflow = '';
+      exitFs();
+    };
+  }
+
+  games.forEach(cfg => {
+    const openFn = makeOpen(cfg);
+    const closeFn = makeClose(cfg);
+    const launch = document.getElementById('launch' + cfg.id);
+    const close = document.getElementById('close' + cfg.id);
+    if (launch) launch.addEventListener('click', openFn);
+    if (close) close.addEventListener('click', closeFn);
+    cfg._close = closeFn;
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      games.forEach(cfg => {
+        const modal = document.getElementById(cfg.modal);
+        if (modal && !modal.hidden) cfg._close();
+      });
+    }
+  });
+
+  // ========== SEARCH ==========
+  const searchInput = document.getElementById('search');
+  const gamesGrid = document.getElementById('games');
+  const appsGrid = document.getElementById('apps');
+  const gamesHeading = document.getElementById('games-section');
+  const appsHeading = document.getElementById('apps-section');
+  const noResultsGames = document.getElementById('noResultsGames');
+  const noResultsApps = document.getElementById('noResultsApps');
+
+  function runSearch() {
+    const q = (searchInput.value || '').trim().toLowerCase();
+    const cards = document.querySelectorAll('.card');
+    let gamesVisible = 0;
+    let appsVisible = 0;
+
+    cards.forEach(card => {
+      const name = (card.dataset.name || '').toLowerCase();
+      const matches = q === '' || name.includes(q);
+      if (matches) {
+        card.classList.remove('hidden-by-search');
+        if (card.closest('#games')) gamesVisible++;
+        else if (card.closest('#apps')) appsVisible++;
+      } else {
+        card.classList.add('hidden-by-search');
+      }
+    });
+
+    if (q !== '' && gamesVisible === 0) {
+      gamesHeading.classList.add('hidden-by-search');
+      gamesGrid.classList.add('hidden-by-search');
+    } else {
+      gamesHeading.classList.remove('hidden-by-search');
+      gamesGrid.classList.remove('hidden-by-search');
+    }
+
+    if (q !== '' && appsVisible === 0) {
+      appsHeading.classList.add('hidden-by-search');
+      appsGrid.classList.add('hidden-by-search');
+    } else {
+      appsHeading.classList.remove('hidden-by-search');
+      appsGrid.classList.remove('hidden-by-search');
+    }
+
+    if (q !== '' && gamesVisible === 0 && appsVisible === 0) {
+      noResultsGames.style.display = 'block';
+      noResultsApps.style.display = 'block';
+    } else {
+      noResultsGames.style.display = 'none';
+      noResultsApps.style.display = 'none';
+    }
+  }
+
+  searchInput.addEventListener('input', runSearch);
+  searchInput.addEventListener('search', runSearch);
+  searchInput.addEventListener('change', runSearch);
+
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && document.activeElement !== searchInput) {
+      e.preventDefault();
+      searchInput.focus();
+    }
+  });
+
+  // ========== FULLSCREEN ==========
+  let fsEl = null;
+  function exitFs() { if (document.fullscreenElement) { document.exitFullscreen().catch(()=>{}); } fsEl = null; syncFsButtons(); }
+  function toggleFs(el) {
+    if (!el) return;
+    if (document.fullscreenElement === el) { document.exitFullscreen().catch(()=>{}); }
+    else {
+      const p = el.requestFullscreen ? el.requestFullscreen() : el.webkitRequestFullscreen ? el.webkitRequestFullscreen() : el.msRequestFullscreen ? el.msRequestFullscreen() : null;
+      if (p && p.catch) p.catch(err => console.warn('Fullscreen blocked:', err));
+      fsEl = el;
+    }
+  }
+  function syncFsButtons() {
+    const active = !!document.fullscreenElement;
+    document.querySelectorAll('.fs-btn').forEach(btn => { btn.textContent = active ? '⛶ Exit fullscreen' : '⛶ Fullscreen'; });
+  }
+  document.querySelectorAll('.fs-btn').forEach(btn => {
+    btn.addEventListener('click', () => { const target = document.getElementById(btn.dataset.fsTarget); toggleFs(target); });
+  });
+  document.addEventListener('fullscreenchange', syncFsButtons);
+  document.addEventListener('webkitfullscreenchange', syncFsButtons);
+  document.addEventListener('MSFullscreenChange', syncFsButtons);
+</script>
+</body>
+</html>
